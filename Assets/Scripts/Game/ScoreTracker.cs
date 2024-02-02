@@ -25,4 +25,9 @@ public class ScoreTracker : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+
+    }
 }
