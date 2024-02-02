@@ -44,6 +44,6 @@ public class Ball : MonoBehaviour
     float calculatePosition(Vector2 ballPosition, Vector2 panelPosition, float panelHeight)
     {
         float value = (ballPosition.y - panelPosition.y) / panelHeight;
-        return (value);
+        return value;
     }
 }
