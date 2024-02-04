@@ -12,18 +12,19 @@ public class BallRespawn : MonoBehaviour
 
     void Start()
     {
+        //Attaching necessary components upon start
         ballRB = GetComponent<Rigidbody2D>();
         ballSpawn = GameObject.Find("BallSpawn").GetComponent<BallSpawn>();
 
         if(ballSpawn.checkSpawnLeft() == true)
         {
-            Debug.Log("Spawn Left");
+            /*Debug.Log("Spawn Left");*/
             ballRB.velocity = Vector2.right * speed;
             ballSpawn.spawnLeftFalseBool();
         }
         else if (ballSpawn.checkSpawnRight() == true)
         {
-            Debug.Log("Spawn Right");
+            /*Debug.Log("Spawn Right");*/
             ballRB.velocity = Vector2.left * speed;
             ballSpawn.spawnRightFalseBool();
         }

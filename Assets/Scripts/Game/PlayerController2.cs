@@ -30,17 +30,17 @@ public class PlayerController2 : MonoBehaviour
 
         if (wcPlayer == 1)
         {
-            if (ballSpawn.checkSpawnRight() && Input.GetKey(KeyCode.M))
+            if (ballSpawn.checkSpawnLeft() && Input.GetKey(KeyCode.E))
             {
                 ballSpawn.respawnBallPlayer();
             }
 
-            if (Input.GetKey(KeyCode.UpArrow)) //W is pressed
+            if (Input.GetKey(KeyCode.W)) //W is pressed
             {
                 panelVelocity.y = speed;
             }
 
-            else if (Input.GetKey(KeyCode.DownArrow)) //S is pressed
+            else if (Input.GetKey(KeyCode.S)) //S is pressed
             {
                 panelVelocity.y = -speed;
             }
@@ -50,24 +50,6 @@ public class PlayerController2 : MonoBehaviour
                 panelVelocity.y = 0;
             }
 
-        }
-
-        if (wcPlayer == 2)
-        {
-            if (ballSpawn.checkSpawnLeft() && Input.GetKey(KeyCode.Keypad1))
-            {
-                ballSpawn.respawnBallPlayer();
-            }
-            
-            if (Input.GetKey(KeyCode.UpArrow)) //Up is pressed
-            {
-                panelVelocity.y = speed;
-            }
-
-            else if (Input.GetKey(KeyCode.DownArrow)) //Down is pressed
-            {
-                panelVelocity.y = -speed;
-            }
         }
 
         playerPanel.velocity = panelVelocity;

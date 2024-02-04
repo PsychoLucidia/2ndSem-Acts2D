@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Break : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnCollisionEnter2D(Collision2D onHit)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (onHit.gameObject.CompareTag("Ball"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
