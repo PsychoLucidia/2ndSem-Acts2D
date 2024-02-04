@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ScoreTracker : MonoBehaviour
+public class ScoreTracker2 : MonoBehaviour
 {
     public GameManager gameManager;
     public BallSpawn ballSpawn; 
@@ -16,6 +16,7 @@ public class ScoreTracker : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         ballSpawn = GameObject.Find("BallSpawn").GetComponent<BallSpawn>();
         playerController = GameObject.Find("Player1").GetComponent<PlayerController>();
         playerController2 = GameObject.Find("Player2").GetComponent<PlayerController>();
@@ -30,15 +31,20 @@ public class ScoreTracker : MonoBehaviour
                 case 1:
                     gameManager.p1Score += 1;
                     ballSpawn.destroyBall();
-                    StartCoroutine(respawnBall());
+                    StartCoroutine(playerRespawnBall());
                     ballSpawn.spawnRightTrueBool();
+                    playerController.enabled = false;
+                    playerController2.enabled = false;
+
                     break;
 
                 case 2:
                     gameManager.p2Score += 1;
                     ballSpawn.destroyBall();
-                    StartCoroutine(respawnBall());
+                    StartCoroutine(playerRespawnBall());
                     ballSpawn.spawnLeftTrueBool();
+                    playerController.enabled = false;
+                    playerController2.enabled = false;
                     break;
             }
         }
@@ -67,5 +73,12 @@ public class ScoreTracker : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1f);
         ballSpawn.spawnBall();
+    }
+
+    IEnumerator playerRespawnBall()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        playerController.enabled = true;
+        playerController2.enabled = true;
     }
 }

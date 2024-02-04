@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     public float speed;
     public float BoundY;
@@ -30,17 +30,17 @@ public class PlayerController : MonoBehaviour
 
         if (wcPlayer == 1)
         {
-            if (ballSpawn.checkSpawnLeft() && Input.GetKey(KeyCode.E))
+            if (ballSpawn.checkSpawnRight() && Input.GetKey(KeyCode.M))
             {
                 ballSpawn.respawnBallPlayer();
             }
 
-            if (Input.GetKey(KeyCode.W)) //W is pressed
+            if (Input.GetKey(KeyCode.UpArrow)) //W is pressed
             {
                 panelVelocity.y = speed;
             }
 
-            else if (Input.GetKey(KeyCode.S)) //S is pressed
+            else if (Input.GetKey(KeyCode.DownArrow)) //S is pressed
             {
                 panelVelocity.y = -speed;
             }
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         if (wcPlayer == 2)
         {
-            if (ballSpawn.checkSpawnRight() && Input.GetKey(KeyCode.Keypad1))
+            if (ballSpawn.checkSpawnLeft() && Input.GetKey(KeyCode.Keypad1))
             {
                 ballSpawn.respawnBallPlayer();
             }
@@ -67,11 +67,6 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKey(KeyCode.DownArrow)) //Down is pressed
             {
                 panelVelocity.y = -speed;
-            }
-
-            else
-            {
-                panelVelocity.y = 0;
             }
         }
 
