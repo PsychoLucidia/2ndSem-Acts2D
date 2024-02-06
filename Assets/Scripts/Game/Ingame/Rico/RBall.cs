@@ -11,16 +11,23 @@ public class RBall : MonoBehaviour
     void Start()
     {
         ballRB = GetComponent<Rigidbody2D>();
-        ballRB.velocity = Vector2.right * speed;
+        ballRB.velocity = Vector2.left * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D actor)
     {
-        if (actor.gameObject.name == "Player1")
+        if (actor.gameObject.name == "PlayerRico")
         {
             float y = calculatePosition(transform.position, actor.transform.position, actor.collider.bounds.size.y);
             Vector2 direction = new Vector2(1, y).normalized;
             ballRB.velocity = direction * speed;
+        }
+        else if (actor.gameObject.name == "WallRight")
+        {
+            float y = calculatePosition(transform.position, actor.transform.position, actor.collider.bounds.size.y);
+            Vector2 direction = new Vector2(-1, y).normalized;
+            ballRB.velocity = direction * speed;
+
         }
     }
 

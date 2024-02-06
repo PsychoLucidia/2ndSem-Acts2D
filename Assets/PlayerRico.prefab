@@ -99,10 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2627448abd91bab459e33cdc0e325c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   BoundY: 4
   playerPanel: {fileID: 0}
-  ballSpawn: {fileID: 0}
   wcPlayer: 1
 --- !u!61 &8521540997523770779
 BoxCollider2D:
