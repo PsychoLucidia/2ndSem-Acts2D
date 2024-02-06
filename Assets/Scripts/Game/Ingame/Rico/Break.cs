@@ -6,6 +6,7 @@ using UnityEngine.TerrainTools;
 public class Break : MonoBehaviour
 {
     public GameManager gameManager;
+    public GameObject breakAni;
 
     public static int brickCount = 0;
     public int brickHealth = 1;
@@ -26,6 +27,9 @@ public class Break : MonoBehaviour
         if (onHit.gameObject.CompareTag("Ball"))
         {
             DestroyObject();
+            GameObject breakAniObj;
+            breakAniObj = Instantiate(breakAni);
+            breakAniObj.transform.position = transform.position;
             BrickColor();
             Debug.Log("Brick Count: " + brickCount.ToString());
         }

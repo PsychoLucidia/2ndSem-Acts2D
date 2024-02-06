@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23c4ee0c1d616c4fbd91345243068a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  breakAni: {fileID: 7299470231821258768, guid: 52eaedb28b9a9314bb1647d0ffbb73f4, type: 3}
+  brickHealth: 1
+  spriteRenderer: {fileID: 0}
 --- !u!61 &4587272293181923723
 BoxCollider2D:
   m_ObjectHideFlags: 0

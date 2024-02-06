@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rico/Ricochet1.unity
     guid: 7c37a561d194eb749936cd63269b3822
+  - enabled: 1
+    path: Assets/Scenes/Rico/Ricochet2.unity
+    guid: f0354cb4f5a803646953eb30c4066e77
+  - enabled: 1
+    path: Assets/Scenes/Rico/Ricochet3.unity
+    guid: 9b0891323cb9bd04b99a01cef0841bb5
   m_configObjects: {}
