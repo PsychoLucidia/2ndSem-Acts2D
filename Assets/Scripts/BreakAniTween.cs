@@ -8,7 +8,7 @@ public class BreakAniTween : MonoBehaviour
     public SpriteRenderer brickColor;
     void Start()
     {
-        LeanTween.scale(brickAni.gameObject, new Vector3(1.5f, 10f, 1.5f), 0.2f).setIgnoreTimeScale(true);
+        LeanTween.scale(brickAni.gameObject, new Vector3(0f, 10f, 1f), 0.2f).setIgnoreTimeScale(true);
         LeanTween.color(brickColor.gameObject, new Color(255f, 255f, 255f, 0f), 0.2f).setIgnoreTimeScale(true);
         StartCoroutine(enumerator());
     }
